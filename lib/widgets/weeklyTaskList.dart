@@ -7,20 +7,24 @@ class WeeklyTaskList extends StatelessWidget {
 
   List get _currentObjectives {
     List foo = [];
-
-    for (int i = 0; i < 7; i++) {
-      // print('Weekly Layer 1 $i ----- ${weeklyObj[i]}');
-      if (weeklyObj[i].length >= 1) {
-        for (int a = 0; a < weeklyObj[i].length; a++) {
-          // print('Weekly Layer 2 $i - $a ----- ${weeklyObj[i][a]}');
-          foo.add(weeklyObj[i][a]);
+    if (weeklyObj.length == 7) {
+      for (int i = 0; i < 7; i++) {
+        // print('Weekly Layer 1 $i ----- ${weeklyObj[i]}');
+        if (weeklyObj[i].length >= 1) {
+          for (int a = 0; a < weeklyObj[i].length; a++) {
+            // print('Weekly Layer 2 $i - $a ----- ${weeklyObj[i][a]}');
+            foo.add(weeklyObj[i][a]);
+          }
         }
+        // else {
+        //   print(weeklyObj[i].length);
+        // }
       }
-      // else {
-      //   print(weeklyObj[i].length);
-      // }
+
+      // print('--------------------');
+    } else {
+      foo.add(weeklyObj[0]);
     }
-    // print('--------------------');
     return foo;
   }
 

@@ -1,7 +1,7 @@
 import 'package:Tracker_app/models/taskModel.dart';
+import 'package:Tracker_app/widgets/weeklyTaskList.dart';
 import 'package:flutter/material.dart';
 import '../widgets/weekView.dart';
-import '../widgets/currentTaskList.dart';
 import '../globals.dart' as globals;
 
 class HomePage extends StatelessWidget {
@@ -65,8 +65,7 @@ class HomePage extends StatelessWidget {
                       builder: (context, AsyncSnapshot snapshot) {
                         print('DAILY TASK ------ ${snapshot.data}');
                         return snapshot.data != null
-                            ? CurrentTaskList(
-                                snapshot.data, Colors.orangeAccent)
+                            ? WeeklyTaskList(snapshot.data, Colors.orangeAccent)
                             : Center(
                                 child: CircularProgressIndicator(),
                               );
